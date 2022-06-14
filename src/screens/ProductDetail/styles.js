@@ -1,19 +1,21 @@
 import { StyleSheet } from "react-native";
 import theme from "../../constants/theme";
 
+
 export const styles = StyleSheet.create({
     container:{
-        alignItems:'center',
+        flex:1,
+        marginTop:30,
+        alignItems:'center'
     },
     title:{
         fontSize:theme.fontSize.xxxl,
-        marginBottom:'5%',
+        textAlign:'center'
     },
-    input:{
-        backgroundColor:theme.colors.backgroundColor,
-        width:'65%',
-        height:35,
-        borderRadius:12,
-        color:'white'
+    card:{
+        width:'100%'
+    },
+    description:{
+        padding:'5%'
     }
 })
