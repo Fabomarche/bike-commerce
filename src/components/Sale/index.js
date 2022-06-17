@@ -1,5 +1,5 @@
-import {View, Text} from "react-native";
-import { Card } from "../index";
+import { View, Text } from "react-native";
+import Card from '../Card/index'
 import { styles } from "./styles";
 
 const Sale = () => {
