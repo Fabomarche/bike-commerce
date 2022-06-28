@@ -4,7 +4,10 @@ import Root from './src';
 
 export default function App() {
   const [loaded] = useFonts({
-    'ubuntu': require('./assets/fonts/Ubuntu.ttf')
+    'ubuntu': require('./assets/fonts/Ubuntu.ttf'),
+    'Lato': require('./assets/fonts/Lato.ttf'),
+    'Lato-Bold': require('./assets/fonts/LatoBold.ttf'),
+    'Lato-Italic': require('./assets/fonts/LatoItalic.ttf')
   })
 
   if(!loaded) {
