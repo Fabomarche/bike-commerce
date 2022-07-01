@@ -7,7 +7,6 @@ const Header = () => {
         <View style={styles.container}>
             <Button title="Hamburger" onPress={()=>null} color={theme.colors.backgroundColor}/>
             <Text>Logo</Text>
-            <Button title="Cart" onPress={()=>null} color={theme.colors.backgroundColor}/>
         </View>
     )
 }

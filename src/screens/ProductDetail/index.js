@@ -1,16 +1,23 @@
-import { Text, View, Button } from "react-native"
+import { useSelector } from 'react-redux'
+import { Text, View } from "react-native"
 import { styles } from "./styles";
 import { Card } from "../../components/index"
-import theme from "../../constants/theme";
 
-const ProductDetail = ({  }) => {
+const ProductDetailScreen = ({ route }) => {
+    const product = useSelector(state => state.product.selected)
+    const { productId } = route.params
+    
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Product Detail</Text>
-            <Card style={styles.card}/>
-            <Text style={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</Text>
+            <View style={styles.details}>
+                <Text style={styles.text}>id: {product.id}</Text>
+                <Text style={styles.text}>{product.title}</Text>
+                <Text style={styles.text}>{product.description}</Text>
+                <Text style={styles.text}>{product.weight}</Text>
+                <Text style={styles.text}>{product.price.toFixed(2)}</Text>
+            </View>
         </View>
     )
 }
 
-export default ProductDetail
+export default ProductDetailScreen

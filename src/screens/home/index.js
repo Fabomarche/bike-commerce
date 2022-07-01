@@ -11,11 +11,13 @@ const Home = ( {  navigation } ) => {
                 <View style={styles.container}>
                     <Header/>
                     <Find/>
-                    <Button 
-                        title='Go to Products' 
-                        onPress={()=> navigation.navigate('Products')}
-                        style={styles.button}
-                    />
+                    <View style={styles.button}>
+                        <Button 
+                            title='Go to Products Categories' 
+                            onPress={()=> navigation.navigate('Categories')}
+                            color="#80968E"
+                        />
+                    </View>
                     <Recommended />
                     <Sale/>
                 </View>

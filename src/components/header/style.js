@@ -9,6 +9,5 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: 96,
         backgroundColor: theme.colors.primary,
-        marginVertical:35,
     }
 })
