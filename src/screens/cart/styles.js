@@ -24,6 +24,15 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
+  buttonAddres:{
+    backgroundColor: theme.colors.primary,
+    marginBottom: 10,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   buttonText: {
     fontSize: 14,
     fontFamily: "Lato",

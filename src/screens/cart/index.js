@@ -13,6 +13,10 @@ const CartScreen = ()=> {
         console.log("confirm cart")
     }
 
+    const onHandlerAddAddress = () => {
+        
+    }
+
     const renderItem = ({ item }) => <CartItem item={item} onDelete={onHandlerDeleteCart}/>
     return(
         <View style={styles.container}>
@@ -24,6 +28,9 @@ const CartScreen = ()=> {
                 />
             </View>
             <View style={styles.footer}>
+                <TouchableOpacity style={styles.buttonAddres} onPress={() => onHandlerAddAddress()}>
+                    <Text style={styles.buttonText}>Add addres deliver</Text>
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonConfirm} onPress={() => onHandlerConfirmCart()}>
                     <Text style={styles.buttonText}>Confirm</Text>
                     <View style={styles.totalContainer}>
