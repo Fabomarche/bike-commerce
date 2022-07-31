@@ -1,4 +1,4 @@
-import { View, FlatList } from "react-native";
+import { View, FlatList, Text } from "react-native";
 import { useSelector, useDispatch } from "react-redux"
 import { CategoryItem } from "../../components/index";
 import { selectCategory } from "../../store/actions/category.action";
@@ -21,6 +21,8 @@ const CategoriesScreen = ({ navigation }) => {
 
     return(
         <View style={styles.container}>
+            <Text>Welcome to Bikecommerce</Text>
+            <Text>Select your kind of Bike</Text>
             <FlatList
                 data={categories}
                 renderItem={renderItem}
