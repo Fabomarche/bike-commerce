@@ -3,6 +3,7 @@ import { Text } from "react-native";
 import IonicIcons from "@expo/vector-icons/Ionicons"
 import MainNavigator from "./main";
 import CartNavigator from "./cart";
+import OrdersNavigator from "./orders";
 import theme from "../constants/theme";
 
 const BottomTabs = createBottomTabNavigator()
@@ -59,6 +60,21 @@ const TabNavigator = () => {
                     )
                 }}
                 />
+            
+            <BottomTabs.Screen 
+                name='OrdersTab'
+                component={OrdersNavigator}
+                options={{
+                    tabBarLabel: ({ focused }) => LabelBottomTab( focused, "Orders"),
+                    tabBarIcon: ({ focused }) => (
+                        <IonicIcons
+                            name= { focused ? "file-tray-full" : "file-tray-outline" }
+                            size={20} 
+                            color={focused ? theme.colors.primary : theme.colors.secondary}
+                        />
+                    )
+                }}
+            />
         </BottomTabs.Navigator>
     )
 }
