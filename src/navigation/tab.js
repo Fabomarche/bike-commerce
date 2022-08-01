@@ -24,8 +24,12 @@ const TabNavigator = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: theme.colors.primary,
-                tabBarInactiveTintColor: theme.colors.secondary
+                tabBarInactiveTintColor: theme.colors.secondary,
+                tabBarStyle: {
+                    backgroundColor: 'rgba(34,36,40,1)',
+                },
             }}
+            
         >
             <BottomTabs.Screen
                 name='HomeTab'
