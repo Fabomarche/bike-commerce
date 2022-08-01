@@ -1,5 +1,5 @@
 import { orderTypes } from "../types/order.types";
-import { URL_API } from "../../constants/database/firebase"
+import { URL_API } from "../../constants/database/firebase.js"
 
 const {GET_ORDERS, DELETE_ORDER} = orderTypes
 
