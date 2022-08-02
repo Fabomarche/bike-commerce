@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, ImageBackground } from "react-native";
 import { styles } from "./styles";
 import { OrderItem } from "../../components/index";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,13 +21,15 @@ const OrdersScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.orderList}>
-                <FlatList
-                    data={orders}
-                    renderItem={renderItem}
-                    keyExtractor={(item) => item.id}
-                />    
-            </View>
+            <ImageBackground source={require('../../../assets/img/portada2.jpg')} resizeMode="cover" style={styles.image}>
+                <View style={styles.orderList}>
+                    <FlatList
+                        data={orders}
+                        renderItem={renderItem}
+                        keyExtractor={(item) => item.id}
+                    />    
+                </View>
+            </ImageBackground>
         </View>
     )
 }
