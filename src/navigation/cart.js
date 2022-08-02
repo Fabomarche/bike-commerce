@@ -18,6 +18,8 @@ const CartNavigator = () => {
                 headerTintColor: isIOS ? theme.colors.black : theme.colors.white,
                 headerTitleStyle: {
                     fontFamily: "Lato-Bold",
+                    color: theme.colors.texSecondaryColor,
+                    fontSize: theme.fontSize.xxxl
                 }
             }}
         >

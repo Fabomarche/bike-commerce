@@ -18,6 +18,8 @@ const OrdersNavigator = ()=>{
                 headerTintColor: isIOS ? theme.colors.black : theme.colors.white,
                 headerTitleStyle: {
                     fontFamily: "Lato-Bold",
+                    color: theme.colors.texSecondaryColor,
+                    fontSize: theme.fontSize.xxxl
                 }
             }}
         >
@@ -25,7 +27,6 @@ const OrdersNavigator = ()=>{
                 name="Orders" 
                 component={OrdersScreen} 
                 options={{
-                    headerShown: false,
                 }}
             />
             

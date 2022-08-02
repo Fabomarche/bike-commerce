@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.colors.backgroundColor,
   },
   cartList: {
     flex: 1,
@@ -32,23 +32,37 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     alignItems: "center",
     justifyContent: "center",
+    color: theme.colors.texSecondaryColor
   },
   buttonText: {
-    fontSize: 14,
-    fontFamily: "Lato",
+    fontSize: 18,
+    fontFamily: "Lato-Bold",
+    color: theme.colors.texSecondaryColor,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
   },
   totalContainer: {
     flex: 0.4,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    
   },
   totalTitle: {
-    fontSize: 14,
-    fontFamily: "Lato",
-  },
-  total: {
     fontSize: 16,
     fontFamily: "Lato-Bold",
+    color: theme.colors.texSecondaryColor,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
+  },
+  total: {
+    fontSize: 20,
+    fontFamily: "Lato",
+    color: theme.colors.texSecondaryColor,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
   },
 });

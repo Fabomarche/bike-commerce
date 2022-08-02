@@ -6,9 +6,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
     borderColor: theme.colors.secondary,
-    borderWidth: 1,
+    borderWidth: 2.5,
+    borderRadius: 15,
     backgroundColor:'rgba(52, 52, 52, 0.8)',
-    marginTop: 15
+    marginTop: 8
   },
   headerContainer: {},
   header: {
