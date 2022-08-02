@@ -1,6 +1,7 @@
 import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import {  ProductDetailScreen, ProductsScreen, CategoriesScreen } from '../screens/index'
+import theme from "../constants/theme";
 
 const Stack = createNativeStackNavigator()
 
@@ -8,7 +9,20 @@ const isIOS = Platform.OS === "ios"
 
 const MainNavigator = ()=>{
     return(
-        <Stack.Navigator initialRouteName="Categories">
+        <Stack.Navigator 
+            initialRouteName="Categories"
+            screenOptions={{
+                headerStyle:{
+                    backgroundColor: theme.colors.primary,
+                },
+                headerTintColor: theme.colors.texSecondaryColor,
+                headerTitleStyle: {
+                    fontFamily: "Lato-Bold",
+                    fontSize: theme.fontSize.xxxl
+                }
+            }}
+
+        >
             <Stack.Screen 
                 name="Categories" 
                 component={CategoriesScreen} 
@@ -20,7 +34,7 @@ const MainNavigator = ()=>{
                 name="Products" 
                 component={ProductsScreen}
                 options={({ route }) => ({
-                    title: route.params.title
+                    title: route.params.title,
                 })}
             />
             <Stack.Screen 
