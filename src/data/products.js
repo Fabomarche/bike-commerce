@@ -2,8 +2,8 @@ export const products = [
     {
         id: 1,
       categoryId: 1,
-      title: "Venzo 29",
-      description: "Bicicleta todo terreno. Rodado 29",
+      title: "Venzo R29",
+      description: "Bicicleta todo terreno",
       weight: "60kg",
       price: 80000,
     },

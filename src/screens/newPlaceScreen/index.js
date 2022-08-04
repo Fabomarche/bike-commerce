@@ -1,27 +1,38 @@
 import { useState } from 'react'
+import { ScrollView, View, Button, Text, TextInput  } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { View, Text, Button, TextInput, ScrollView } from 'react-native'
-import { styles }  from './styles'
+import { styles} from './styles'
 import theme from '../../constants/theme'
-import { addplace } from '../../store/actions/place.action'
+import { addPlace } from '../../store/actions/place.action'
+import { LocationSelector } from '../../components/index'
 
 
+const NewPlaceScreen = ({ navigation }) => {
+    const dispatch = useDispatch()
+    const [title, setTitle] = useState('')
 
-const NewPlaceScreen = () => {
-    const dispatch =  useDispatch()
-    const [title, setTitle] = useState("")
-
-    const handletitleChange = text => setTitle(text)
+    const handleTitleChange = text => setTitle(text)
 
     const handleSave = () => {
-        dispatch(addplace(title, image))
-        NavigationPreloadManager.navigate('Address')
+        dispatch(addPlace(title))
+        //navigation.navigate('Address')//ojo esto
     }
 
     return(
         <ScrollView>
             <View style={styles.container}>
-                <Button title="Save Addres" color={theme.colors.secondary} onPress={()=>{}} />
+                <Text style={styles.label}>Titulo</Text>
+                <TextInput
+                    style={styles.input}
+                    value={title}
+                    onChangeText={handleTitleChange}
+                />
+                <LocationSelector />
+                <Button 
+                    title="Save Addres"
+                    color={theme.colors.secondary}
+                    onPress={handleSave}
+                />
             </View>
         </ScrollView>
     )

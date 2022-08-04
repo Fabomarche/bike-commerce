@@ -6,6 +6,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: theme.colors.backgroundColor,
+    borderTopWidth: 5,
+    borderTopColor: theme.colors.lightBlue
   },
   cartList: {
     flex: 1,

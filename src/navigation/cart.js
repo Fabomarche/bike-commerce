@@ -1,6 +1,6 @@
 import { Platform } from "react-native"
-import { CartScreen } from "../screens/index"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { CartScreen, NewPlaceScreen } from "../screens/index"
 import theme from "../constants/theme"
 
 const Stack = createNativeStackNavigator()
@@ -28,6 +28,14 @@ const CartNavigator = () => {
                 component={CartScreen}
                 options={{
                     headerShown:true
+                }}
+            />
+
+            <Stack.Screen
+                name="NewPlace"
+                component={NewPlaceScreen}
+                options={{
+                    headerShown:false
                 }}
             />
         </Stack.Navigator>    

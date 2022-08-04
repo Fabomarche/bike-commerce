@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeItem, confirmCart } from "../../store/actions/cart.action";
 import { styles } from "./styles";
 
-const CartScreen = ()=> {
+const CartScreen = ({ navigation })=> {
     const dispatch = useDispatch()
     const cart = useSelector((state) => state.cart.items)
     const total = useSelector((state) => state.cart.total)
@@ -15,6 +15,10 @@ const CartScreen = ()=> {
 
     const onHandlerConfirmCart = () => {
         dispatch(confirmCart(cart, total))
+    }
+
+    const onHandlerAddAddress = () => {
+        navigation.navigate('NewPlace')
     }
 
     const renderItem = ({ item }) => <CartItem item={item} onDelete={onHandlerDeleteCart}/>
