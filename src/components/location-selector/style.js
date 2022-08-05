@@ -14,4 +14,9 @@ export const styles = StyleSheet.create({
     borderColor: theme.colors.secondary,
     borderWidth:1,
   },
+  actions:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width:'100%'    
+  }
 });

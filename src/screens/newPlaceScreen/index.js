@@ -21,15 +21,15 @@ const NewPlaceScreen = ({ navigation }) => {
     return(
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.label}>Titulo</Text>
+                <Text style={styles.label}>Reference</Text>
                 <TextInput
                     style={styles.input}
                     value={title}
                     onChangeText={handleTitleChange}
                 />
-                <LocationSelector />
+                <LocationSelector navigation={navigation}/>
                 <Button 
-                    title="Save Addres"
+                    title="Save Address"
                     color={theme.colors.secondary}
                     onPress={handleSave}
                 />
