@@ -1,7 +1,9 @@
-import AppNavigator from "./navigation";
-export default function Root() {
+import AppNavigator from "./navigation/index";
+
+const Root = () => {
   return (
     <AppNavigator />
   );
 }
 
+export default Root;

@@ -33,9 +33,9 @@ const CartScreen = ({ navigation })=> {
                     />
                 </View>
                 <View style={styles.footer}>
-                    <TouchableOpacity style={styles.buttonAddres} onPress={() => onHandlerAddAddress()}> 
+                    {/* <TouchableOpacity style={styles.buttonAddres} onPress={() => onHandlerAddAddress()}> 
                         <Text style={styles.buttonText}>Add address deliver</Text> 
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     
                     <TouchableOpacity style={styles.buttonConfirm} onPress={()=> onHandlerConfirmCart()}>
                         <Text style={styles.buttonText}>Confirm</Text>

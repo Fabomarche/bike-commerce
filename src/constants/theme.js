@@ -6,7 +6,8 @@ export default{
         backgroundColor: "#3F7C85",
         textColor:'#747E7E',
         texSecondaryColor: '#ffffff',
-        placeholder:'#9E9E9E'
+        placeholder:'#9E9E9E',
+        error: 'red',
     },
     fontSize: {
         small: 12,
