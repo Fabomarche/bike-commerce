@@ -31,7 +31,7 @@ const ProductsScreen = ({ navigation }) => {
                 data={filterProducts}
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
-                numColumns={2}
+                numColumns={1}
             />
         </View>
     )

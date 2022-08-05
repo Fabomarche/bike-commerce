@@ -7,6 +7,7 @@ export default{
         textColor:'#747E7E',
         texSecondaryColor: '#ffffff',
         placeholder:'#9E9E9E',
+<<<<<<< HEAD
         text: "#212121",
         background: "#ffffff",
         shadow: "#000000",
@@ -14,6 +15,9 @@ export default{
         black: "#000000",
         gray: "#f3f3f3",
         error: "#ff0000"
+=======
+        error: 'red',
+>>>>>>> develop
     },
     fontSize: {
         small: 12,

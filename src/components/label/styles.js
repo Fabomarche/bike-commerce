@@ -7,7 +7,12 @@ export const styles = StyleSheet.create({
     },
     label: {
         fontSize: 14,
+<<<<<<< HEAD
         fontFamily: 'Lato-Bold',
         color: theme.colors.text
+=======
+        fontFamily: "Lato-Bold",
+        color: theme.colors.text,
+>>>>>>> develop
     }
 })

@@ -1,9 +1,15 @@
 import { StyleSheet } from "react-native";
+import theme from "../../constants/theme";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 90,
+    borderWidth: 2,
+    borderColor: theme.colors.lightBlue,
+    borderRadius:15,
+    padding:10,
+    marginBottom: 10,
+    backgroundColor:'rgba(52, 52, 52, 0.2)',
   },
   headerContainer: {},
   header: {
@@ -17,13 +23,23 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  detail: {},
+  detail: {
+    alignContent:'center',
+    justifyContent: "flex-start"
+  },
+  title:{
+    fontSize: 20,
+    fontFamily: "Lato-Bold",
+    color: theme.colors.texSecondaryColor
+  },
   detailQty: {
-    fontSize: 14,
+    fontSize: 15,
     fontFamily: "Lato",
+    color: theme.colors.texSecondaryColor
   },
   detailPrice: {
-    fontSize: 16,
-    fontFamily: "Lato-Bold",
+    fontSize: 20,
+    fontFamily: "Lato",
+    color: theme.colors.texSecondaryColor
   },
 });

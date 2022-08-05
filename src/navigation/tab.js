@@ -1,62 +1,109 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Text } from "react-native";
-import IonicIcons from "@expo/vector-icons/Ionicons"
+import React from "react";
+import { Text, Image, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useSelector } from 'react-redux';
+import IonicsIcons from '@expo/vector-icons/Ionicons';
 import MainNavigator from "./main";
 import CartNavigator from "./cart";
+import OrdersNavigator from "./orders";
+import UserNavigator from "./user";
 import theme from "../constants/theme";
 
-const BottomTabs = createBottomTabNavigator()
-const LabelBottomTab = (focused, label) => (
+const BottomTabs = createBottomTabNavigator();
+
+const LabelBottonTab = (focused, label) => (
     <Text
         style={{
-            color: focused ?  theme.colors.primary : theme.colors.secondary,
-            fontFamily: focused ? 'Lato-Bold' : 'Lato-Italic',
+            color: focused ? theme.colors.primary : theme.colors.secondary,
+            fontFamily: focused ? 'Lato-Bold' : 'Lato'
         }}
-    >
-        {label}
-    </Text>
+    >{label}</Text>
 )
 
 const TabNavigator = () => {
-    return(
-        <BottomTabs.Navigator
-            initialRouteName="HomeTab"
+
+    const userImg = useSelector((state) => state.user.img);
+    const userName = useSelector((state) => state.user.name);
+
+    return (
+        <BottomTabs.Navigator 
+            initialRouteName='ShopTab'
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: theme.colors.primary,
-                tabBarInactiveTintColor: theme.colors.secondary
             }}
         >
             <BottomTabs.Screen
-                name='HomeTab'
+                name='ShopTab'
                 component={MainNavigator}
                 options={{
-                    tabBarLabel: ({ focused }) => LabelBottomTab( focused, "Home" ),
+                    tabBarLabel: ({ focused }) => LabelBottonTab(focused,'Shop'),
                     tabBarIcon: ({ focused }) => (
-                        <IonicIcons
-                            name={ focused ? 'home' : 'home-outline'}
+                        <IonicsIcons 
+                            name={ focused ? 'home' : 'home-outline'} 
                             size={20}
-                            color={focused ? theme.colors.primary : theme.colors.secondary}
+                            color={ focused ? theme.colors.primary : theme.colors.secondary }
                         />
                     )
                 }}
-                />
+            />
             <BottomTabs.Screen
                 name='CartTab'
                 component={CartNavigator}
                 options={{
-                    tabBarLabel: ({ focused }) => LabelBottomTab( focused, "Cart" ),
+                    tabBarLabel: ({ focused }) => LabelBottonTab(focused,'Cart'),
                     tabBarIcon: ({ focused }) => (
-                        <IonicIcons
-                            name={ focused ? 'cart' : 'cart-outline'}
+                        <IonicsIcons 
+                            name={ focused ? 'cart' : 'cart-outline'} 
                             size={20}
-                            color={focused ? theme.colors.primary : theme.colors.secondary}
+                            color={ focused ? theme.colors.primary : theme.colors.secondary }
                         />
                     )
                 }}
-                />
+            />
+            <BottomTabs.Screen
+                name='OrdersTab'
+                component={OrdersNavigator}
+                options={{
+                    tabBarLabel: ({ focused }) => LabelBottonTab(focused,'Orders'),
+                    tabBarIcon: ({ focused }) => (
+                        <IonicsIcons 
+                            name={ focused ? 'file-tray-full' : 'file-tray-outline'} 
+                            size={20}
+                            color={ focused ? theme.colors.primary : theme.colors.secondary }
+                        />
+                    )
+                }}
+            />
+             <BottomTabs.Screen
+                name='UserTab'
+                component={UserNavigator}
+                options={{
+                    tabBarLabel: ({ focused }) => LabelBottonTab(focused, userName? userName : 'Username'),
+                    tabBarIcon: ({ focused }) => (
+                        userImg ?
+                            <Image 
+                                style={styles.imagen}
+                                source={{uri: userImg}}
+                            />
+                        :
+                            <IonicsIcons 
+                                name={ focused ? 'person' : 'person-outline'} 
+                                size={20}
+                                color={ focused ? theme.colors.primary : theme.colors.secondary }
+                            />
+                    )
+                }}
+            />
         </BottomTabs.Navigator>
     )
 }
 
-export default TabNavigator
+const styles = StyleSheet.create({
+    imagen:{
+        borderRadius: 5,
+        height: 30,
+        width: 30,
+    }
+})
+
+export default TabNavigator;

@@ -7,14 +7,14 @@ const CartItem = ({ item, onDelete }) => {
     return(
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.header}>
-                    {item.name}
+                <Text style={styles.title}>
+                    {item.title}
                 </Text>
             </View>
             <View style={styles.containerDetail}>
                 <View style={styles.detail}>
                     <Text style={styles.detailQty}>
-                        {item.quantity}
+                        quantity: {item.quantity}
                     </Text>
                     <Text style={styles.detailPrice}>
                         $ {item.price}

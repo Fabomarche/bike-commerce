@@ -11,22 +11,27 @@ export const styles = StyleSheet.create({
   containerTouchable: {
     flex: 1,
     borderRadius: 10,
-    backgroundColor: theme.colors.secondary,
-    shadowColor: theme.colors.lightBlue,
-    shadowOpacity: 0.26,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    elevation: 3,
+    backgroundColor: theme.colors.primary,
+    shadowColor: theme.colors.primary,
     justifyContent: "space-around",
-    alignItems: "center",
     padding: 10,
+    borderColor: theme.colors.texSecondaryColor,
+    borderWidth: 4,
   },
   name: {
-    fontSize: 14,
+    fontSize: 40,
     fontFamily: "Lato-Bold",
+    color: theme.colors.texSecondaryColor,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: -2, height: 2},
+    textShadowRadius: 10
   },
   detail: {
     fontFamily: "Lato",
-    fontSize: 12,
+    fontSize: theme.fontSize.xxl,
+    color: theme.colors.texSecondaryColor,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
   },
 });
